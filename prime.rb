@@ -14,12 +14,19 @@
 #       return true 
 #     end 
     
-def is_prime(n)
-  for d in 2..(n - 1)
-   if (n % d) == 0
-    return false
-   end
-  end
+def isPrime(number)
+	if number == 0 or number == 1
+		return false
+	end
 
-  true
- end
+	i = 2
+	limit = number / i
+	while i < limit
+		if number % i == 0
+			return false
+		end
+		i += 1
+		limit = number / i
+	end
+	return true
+end
